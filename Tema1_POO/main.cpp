@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
 #include <cstring>
-//using namespace std;
 
+//Aceasta tema este formata din trei clase: Produs, Client si Comanda.
+//Un client al unui CoffeeShop plaseaza o comanda care contine un produs.
 
 class Produs {
 
@@ -10,18 +11,18 @@ class Produs {
     std::string nume;
     double pret;
     bool status; //true="disponibil" sau false="indisponibil"
-    bool alcool;
-    // friend class Comanda;
+    bool alcool; //true = produsul contine alcool, false = nu contine alcool
+
 public:
 
     Produs(const std::string, const double, const bool, const bool);
     ~Produs()=default;
-    void afiseazaStoc();
+    void afiseazaStoc(); //afiseaza daca produsul este disponibil sau nu
     void afiseazaPret();
     std::string afiseazaNume();
-    double getPret();
-    bool getStatus();
-    bool getAlcool();
+    //double getPret(); //returneaza pretul produsului
+   // bool getStatus(); //returneaza statusul produsului
+    bool getAlcool(); //returneaza valoarea variabilei alcool
 };
 
 Produs::Produs(const std::string Nume, const double Pret, const bool Status, const bool Alcool)
@@ -44,15 +45,15 @@ void Produs::afiseazaPret()
     std::cout<<"Produsul "<<nume<<" costa "<<pret<<" lei."<<'\n';
 }
 
-double Produs::getPret()
+/*double Produs::getPret()
 {
     return pret;
-}
+} */
 
-bool Produs::getStatus()
+/*bool Produs::getStatus()
 {
     return status;
-}
+} */
 
 std::string Produs::afiseazaNume() {
     return nume;
@@ -64,8 +65,7 @@ bool Produs::getAlcool() {
 
 class Comanda {
     int nr_comanda;
-    Produs *p;
-  //  std::string lista_produse;
+    Produs *p; //comanda contine un produs
 
 public:
 
@@ -73,14 +73,11 @@ public:
 
     Comanda(const int,Produs);
     ~Comanda() = default;
-/*
-    void verificareProdus()
-    {   //Produs p;
-        if(lista_produse!=nume.p) cout<<"nu avem acest produs."
-    }
-*/
-    void afisComanda();
-    bool VerifDisp();
+
+
+    void afisComanda(); //afiseaza comanda
+
+    bool VerifDisp(); //verifica daca comanda se poate procesa
 
 
 
@@ -104,7 +101,7 @@ bool Comanda::VerifDisp() {
 class Client{
 
     std::string nume;
-    Comanda *comand;
+    Comanda *comand; //clientul are o comanda
     int varsta;
 
 
@@ -121,63 +118,21 @@ class Client{
         std::cin >> varsta;
     }
     ~Client()
-    {
+    { //daca clientul este minor si comanda sa contine alcool, nu ii procesam comanda.
        if (varsta <18 && comand)
-           std::cout<<'\n'<<"Nu va putem da acest produs deoarece contine alcool. :(";
+           std::cout<<'\n'<<nume<<", nu va putem da acest produs deoarece contine alcool. :(";
     }
-
-
-  //std::string alc = "Irish";
-        //if(strstr(lista_produse.comand.c_str(),alc.c_str()))
-          //  {
-
-           //     if(varsta < 18)
-           //    {
-//
-                //   std::cout<<"Nu va putem da acest produs deoarece contine alcool. :(";
-              //     std::cout<<"Doriti sa comandati alceva? Alegeti DA sau NU."<<'\n';
-
-          //  }
-          //  }
-
-
-
-
-
-
-
-
-
 
     };
 
 
-
-
-
- //void afiseazaComanda( );
-
-
-    //  ~Client();
-
-
-
-
-
-/*void Client::afiseazaComanda( )
-
-    {
-        std::cout<<"Clientul "<<nume<<" a comandat comanda cu nr "<<nr_comanda<<" "<<comanda<<'\n';
-     } */
-
 int main()
-{   //Produs p("",0,false );
+{
     Produs Espresso ("Espresso", 5 , false,false);
     Produs Latte ("Latte",6.99, true,false);
     Produs Cappuccino ("Cappuccino", 5.99, false,false);
     Produs Irish("Irish Coffee", 8, true,true);
     Produs ApaPlata("Apa plata", 3, true,false);
-    Produs ApaMinerala("Apa minerala", 3, false,false);
     Espresso.afiseazaStoc();
     Espresso.afiseazaPret();
     std::cout<<'\n';
@@ -195,26 +150,40 @@ int main()
 
     Comanda c1(1,Irish);
     Client C1(c1);
-     //Client C1("Ana", c1 , 18);
+   // c1.afisComanda();
+    //std::cout<<'\n';
+
+    Comanda c2(2,Espresso);
+    Client C2(c2);
+    //c2.afisComanda();
+   // std::cout<<'\n';
+
+
+    Comanda c3(3, Cappuccino);
+    Client C3(c3);
+   // c3.afisComanda();
+   //std::cout<<'\n';
+
+    Comanda c4(4, Irish);
+    Client C4(c4);
+    //c4.afisComanda();
+    //std::cout<<'\n';
+
+    Comanda c5(5, Latte);
+    Client C5(c5);
+   // c5.afisComanda();
+
+
 
     c1.afisComanda();
-
-    //Client C2(" ", 2 , " ", 7);
-    // Client C3(" ", 3 , " ", 10);
-    // Client C4( 4, 17);
-
-    //  C1.afiseazaClient();
-    // C2.afiseazaClient();
-    //C3.afiseazaClient();
-    // C4.afiseazaClient();
-    //std::cout<<'\n';
-    //  C1.afiseazaComanda();
-    // std::cout<<'\n';
-    //  C2.afiseazaComanda();
-    //  std::cout<<'\n';
-    //  C3.afiseazaComanda();
-    //cout<<'\n';
-    // C4.afiseazaComanda();
+    std::cout<<'\n';
+    c2.afisComanda();
+    std::cout<<'\n';
+    c3.afisComanda();
+    std::cout<<'\n';
+    c4.afisComanda();
+    std::cout<<'\n';
+    c5.afisComanda();
 
 
 
