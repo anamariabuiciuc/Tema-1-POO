@@ -1,7 +1,7 @@
 #include "Client.h"
 #include<iostream>
 
-Client::Client(const std::string Nume, Comanda c, const int Varsta) {
+Client::Client(const std::string Nume, Comanda& c, const int Varsta) : comand(c) {
         this->nume = Nume;
         this->comand = c;
         this->varsta = Varsta;
