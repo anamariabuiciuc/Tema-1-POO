@@ -14,7 +14,7 @@ public:
 
 
 
-   Client(const std::string, Comanda, const int);
+   Client(const std::string, Comanda&, const int);
 
    int ClientMinor();
 
