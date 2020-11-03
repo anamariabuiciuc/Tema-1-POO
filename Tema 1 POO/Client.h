@@ -6,7 +6,7 @@
 class Client{
 
     std::string nume;
-    Comanda *comand; //clientul are o comanda
+    Comanda comand; //clientul are o comanda
     int varsta;
 
 
