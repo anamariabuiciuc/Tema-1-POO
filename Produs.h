@@ -21,7 +21,7 @@ public:
     std::string afiseazaNume(); //returneaza numele produsului
     double getPret(); //returneaza pretul produsului
     bool getStatus(); //returneaza statusul produsului
-    bool getAlcool(); //returneaza valoarea variabilei alcool
+    bool contineAlcool(); //returneaza valoarea variabilei alcool
 
 };
 

@@ -34,7 +34,6 @@ std::string Produs::afiseazaNume() {
 }
 
 
-bool Produs::getAlcool() {
-    if (alcool) return true;
-    else return false;
+bool Produs::contineAlcool() {
+    return alcool;
 }

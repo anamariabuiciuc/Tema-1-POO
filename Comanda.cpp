@@ -22,8 +22,10 @@ int Comanda::VerifDisp() {
     int i;
     bool alc = false;
     for (i = 0; i < nr_produse; i++) {
-        if (produse[i].getAlcool())
+        if (produse[i].contineAlcool()) {
             alc = true; //daca comanda contine cel putin un produs ce contine alcool, alc devine true
+            break;
+        }
     }
 
     return alc;
