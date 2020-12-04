@@ -5,7 +5,7 @@
 
 ///Buiciuc Ana-Maria, Grupa 251 - POO
 ///Aceasta tema este formata din trei clase: Produs, Client si Comanda.
-///Un client al unui CoffeeShop plaseaza o comanda care contine un produs.
+///Un client al unui CoffeeShop plaseaza o comanda care contine produse.
 
 int main() {
     Produs Espresso("Espresso", 5, false, false);
