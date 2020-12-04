@@ -11,7 +11,7 @@ class Comanda {
     std::vector<Produs> produse;
 
 public:
-    Comanda();
+ //   Comanda();
 
     Comanda(const int, const int, std::vector<Produs>);
 
