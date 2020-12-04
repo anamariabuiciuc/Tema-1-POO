@@ -1,3 +1,0 @@
-F:/facultate/Anul 2/POO/Tema 1 POO/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-F:/facultate/Anul 2/POO/Tema 1 POO/cmake-build-debug/CMakeFiles/Tema_1_POO.dir
-F:/facultate/Anul 2/POO/Tema 1 POO/cmake-build-debug/CMakeFiles/edit_cache.dir
