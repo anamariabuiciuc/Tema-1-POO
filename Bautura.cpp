@@ -25,7 +25,7 @@ bool Bautura::isBautura() {
     return true;
 }
 
-double Bautura::timpAlergare() {
+double Bautura::timpAlergare() {  //calculeaza timpul pe care trebuie sa il alergi pentru a arde caloriile consumate pentru fiecare bautura
     double calorii;
     calorii = this->cantitate*2;
     return calorii * 0.15;
