@@ -8,6 +8,8 @@
 
 ///Buiciuc Ana-Maria, Grupa 251 - POO
 ///Aceasta tema este formata din trei clase: Produs, Client si Comanda.
+//Update:
+//Clasele Mancare si Bautura sunt derivate din clasa Produs.
 ///Un client al unui CoffeeShop plaseaza o comanda care contine produse.
 
 std::ifstream in("date.in");
