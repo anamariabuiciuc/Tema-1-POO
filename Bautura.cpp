@@ -17,16 +17,28 @@ Bautura::Bautura(const std::string nume, const double pret, const bool status, b
 }
 
 
-bool Bautura::isMancare() {
+/*bool Bautura::isMancare() {
     return false;
 }
 
 bool Bautura::isBautura() {
     return true;
-}
+} */
 
 double Bautura::timpAlergare() {  //calculeaza timpul pe care trebuie sa il alergi pentru a arde caloriile consumate pentru fiecare bautura
     double calorii;
     calorii = this->cantitate*2;
     return calorii * 0.15;
+}
+
+double Bautura::calculEnergie() { //calculeaza cata energie iti ofera bautura respectiva in kJ
+    
+    double energie;
+    energie = this->cantitate * 5 * 4.184;
+    if(cofeina == true) 
+        energie = energie * 1.25;
+    
+    // cantitatea in g x 5 kcal/g = Z kcal = Z Cal => Transformam in kJ.  =>  Z Cal x 4.184kJ/Cal = Y kJ
+    
+    return energie;
 }
