@@ -17,9 +17,10 @@ Mancare();
 Mancare(const std::string, const double, const bool, const std::string, const std::string, int);
 //Mancare(const bool, const bool );
 ~Mancare() = default;
-bool isBautura();
-bool isMancare();
+//bool isBautura();
+//bool isMancare();
 double timpAlergare();
+double calculEnergie();
 
 
 };
