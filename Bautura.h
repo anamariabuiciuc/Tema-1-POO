@@ -22,11 +22,13 @@ public:
 
     ~Bautura() = default;
 
-    bool isBautura();
+    //bool isBautura();
 
-    bool isMancare();
+   // bool isMancare();
 
     double timpAlergare();
+    
+    double calculEnergie();
 
 };
 
