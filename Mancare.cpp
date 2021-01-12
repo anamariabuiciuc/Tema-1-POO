@@ -17,7 +17,7 @@ Mancare::Mancare(const std::string nume, const double pret, const bool status, c
     this->alergeni = alergeni;
     this->nr_calorii = nr_calorii;
 }
-
+/*
 bool Mancare::isBautura() {
     return false;
 }
@@ -26,7 +26,19 @@ bool Mancare::isMancare() {
     return true;
 }
 
+*/
+
 double Mancare::timpAlergare() {
     return this->nr_calorii * 0.2; // 0.2s pe calorie
 }
 
+double Bautura::calculEnergie() { //calculeaza cata energie iti ofera mancarea respectiva in kJ
+    
+    double energie;
+    energie = this->nr_calorii * 4.184;
+
+    
+    //  Z Cal => Transformam in kJ.  =>  Z Cal x 4.184kJ/Cal = Y kJ
+    
+    return energie;
+}
