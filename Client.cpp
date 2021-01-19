@@ -26,11 +26,11 @@ int Client::ClientMinor() {
         if (varsta >= 18) {
            return 0;
         } else {
-            throw 1;
+            throw varsta;
         }
     }
-    catch (...) {
-        std::cout << '\n' << nume << ", nu va putem procesa comanda (nr " << comand.getNrComanda() << ") deoarece contine alcool. :(" << '\n' << '\n';
+    catch (const int varsta) {
+        std::cout << '\n' << nume << ",varsta dvs este: "<<varsta<<" ani. Nu va putem procesa comanda (nr " << comand.getNrComanda() << ") deoarece contine alcool. :(" << '\n' << '\n';
     }
 
 }
