@@ -10,10 +10,21 @@ class Client {
     std::string nume;
     Comanda comand; //clientul are o comanda
     int varsta;
+    
+     private:
+    
+        Client()=default;
+    
+        static Client* clientul;
 
 public:
 
-    Client(const std::string, Comanda &, const int);
+ //   Client(const std::string, Comanda &, const int);
+    
+    {
+        if (clientul== nullptr){ clientul= new Client;}
+        return clientul;
+    };
 
     int ClientMinor();
 
