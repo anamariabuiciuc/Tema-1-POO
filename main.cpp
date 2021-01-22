@@ -66,6 +66,10 @@ int main() {
     std::cout << '\n';
     C5.afisarePlata();
     std::cout << '\n';
+   
+    //clientBuilder cb;
+    //Client cc = cb.nume("Corina").build();
+
 
 
     return 0;
