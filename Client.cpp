@@ -5,7 +5,6 @@
 #include "Client.h"
 #include "Comanda.h"
 #include<iostream>
-
 Client::Client(const std::string Nume, Comanda &c, const int Varsta) : comand(c) {
     this->nume = Nume;
     this->comand = c;
@@ -13,27 +12,25 @@ Client::Client(const std::string Nume, Comanda &c, const int Varsta) : comand(c)
 };
 
 int Client::ClientMinor() {
- /*   if (comand.VerifDisp() == true && varsta < 18) {
+   /* if (comand.VerifDisp() == true && varsta < 18) {
         std::cout << '\n' << nume << ", nu va putem procesa comanda (nr " << comand.getNrComanda()
                   << ") deoarece contine alcool. :(" << '\n' << '\n';
         return 1;
-    } else return 0;*/
-
-
- if(comand.VerifDisp()==true)  //exceptie pentru varsta
-    try {
+    } else return 0; */
+    if (comand.VerifDisp() == true)  //exceptie pentru varsta
+        try {
 
         if (varsta >= 18) {
-           return 0;
-        } else {
+            return 0;
+        }
+        else {
             throw varsta;
         }
     }
     catch (const int varsta) {
-        std::cout << '\n' << nume << ",varsta dvs este: "<<varsta<<" ani. Nu va putem procesa comanda (nr " << comand.getNrComanda() << ") deoarece contine alcool. :(" << '\n' << '\n';
+        std::cout << '\n' << nume << ",varsta dvs este: " << varsta << " ani. Nu va putem procesa comanda (nr " << comand.getNrComanda() << ") deoarece contine alcool. :(" << '\n' << '\n';
         return 1;
     }
-
 }
 
 
@@ -57,7 +54,6 @@ void Client::afisarePlata() {
     std::cout << '\n';
     std::cout << '\n';
 }
-
 
 
 
