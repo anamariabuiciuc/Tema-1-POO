@@ -31,6 +31,7 @@ int Client::ClientMinor() {
     }
     catch (const int varsta) {
         std::cout << '\n' << nume << ",varsta dvs este: "<<varsta<<" ani. Nu va putem procesa comanda (nr " << comand.getNrComanda() << ") deoarece contine alcool. :(" << '\n' << '\n';
+        return 1;
     }
 
 }
